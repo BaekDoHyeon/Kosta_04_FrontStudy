@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- ChartJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  /* 
+  	{ } 안에는 
+  	type, data(labels, datasets), options 로 구성되어져 있다.
+  */
+  new Chart(ctx, {
+    type: 'bar', // bar, line, pie, scatter 가 대표적이다.
+    data: { // labels, datasets 
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], // x축의 범례
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 17, 15, 2, 3], // labels의 갯수와 일치해야 한다.
+        borderWidth: 1
+      }]
+    }
+  });
+</script>
+
+</body>
+</html>

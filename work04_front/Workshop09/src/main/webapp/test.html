@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!-- ChartJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+	.chart-container {
+		border: 1px solid #ddd;
+		margin: 0 auto;
+		padding: 10px;
+		border-radius: 4px;
+	}
+	
+	.jumbotron {
+		background-color: lightgray;
+	}
+</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>A항공사 년도별 승객수 누적현황 차트 통계</h1>
+	</div>
+	<div class="chart-container">
+		<canvas id="bar-chart"></canvas>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var ctx = document.querySelector("#bar-chart");
+	let months = ['1월 승객수', '2월 승객수', '3월 승객수', '4월 승객수', '5월 승객수', '6월 승객수', '7월 승객수','8월 승객수', '9월 승객수', '10월 승객수','11월 승객수', '12월 승객수'];
+	let data_2022 = {
+			label:'2022년',
+			data:[101, 98, 109, 102, 113, 116, 120, 119, 99, 88, 99, 100],
+			backgroundColor:'rgba(203,206,145,.5)', /* bar로 변경시 대비해서.. */
+			borderWidth:3,
+			borderColor:'crimson'
+	};
+	
+	let data_2023 = {
+			label:'2023년',
+			data:[103, 101, 118, 110, 119, 119, 130, 142, 102, 100, 103, 121],
+			backgroundColor:'rgba(203,206,145,.5)', /* bar로 변경시 대비해서.. */
+			borderWidth:3,
+			borderColor:'SlateBlue'
+	};
+	
+	let config = {
+		type: 'bar',
+		data: {
+			labels: months,
+			datasets: [data_2022, data_2023]
+		},
+		options: {
+			maintainAspectRadio: false
+		}
+	};
+	
+	new Chart(ctx, config);
+</script>
+</body>
+</html>

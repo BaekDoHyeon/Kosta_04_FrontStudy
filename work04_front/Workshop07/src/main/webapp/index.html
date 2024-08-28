@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="euc-kr">
+<title>Dynamic Table</title>
+ <!-- Link CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style type="text/css">
+	
+	.editTable {
+		display: flex;
+		justify-content: center;	
+		height: 600px;
+	}
+	
+	.editTableSub {
+		width: 500px;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.editTableSub input {
+		width: 200px;
+		height: 25px;
+	}
+	
+	.editTableSub div {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+	
+	.updateBtn2 {
+		margin-top: 15px;
+		display: flex;
+		align-self: flex-start;
+	}
+
+</style>
+</head>
+<body>
+ <!-- Main Data Table -->
+        <div class="mainTable">
+            <h1 class="jumbotron text-center" style="background-color: gray">Employee Information</h1>
+            <div class="container"> <!-- 혹은 container-fluid -->
+	            <table class="table table-dark table-striped " id="table" border="1" style="text-align: center">
+	                
+	                <tr>
+	                    <th>Employee Number</th>
+	                    <th>Employee Name</th>
+	                    <th>JOB</th>
+	                    <th>Address</th>
+	                    <th>Phone Number</th>
+	                </tr>
+	                
+	                <tr>
+	                    <td>7736</td>
+	                    <td>Davidson </td>
+	                    <td>Marketing</td>
+	                    <td>United State</td>
+	                    <td>11223344</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>7902</td>
+	                    <td>Vito </td>
+	                    <td>Education</td>
+	                    <td>Thailand</td>
+	                    <td>987654321</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>2390</td>
+	                    <td>Johnson </td>
+	                    <td>Manager</td>
+	                    <td>France</td>
+	                    <td>568925795</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>7987</td>
+	                    <td>Peter  </td>
+	                    <td>SalesMan</td>
+	                    <td>Germany</td>
+	                    <td>437496478</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>5320</td>
+	                    <td>Edward </td>
+	                    <td>Engineer</td>
+	                    <td>Argentina</td>
+	                    <td>764326899</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>7777</td>
+	                    <td>김믿음 </td>
+	                    <td>Programmer</td>
+	                    <td>Korea</td>
+	                    <td>578854268</td>
+	                </tr>
+	                
+	                <tr>
+	                    <td>1289</td>
+	                    <td>Smith </td>
+	                    <td>Marketing</td>
+	                    <td>Australia</td>
+	                    <td>357882579</td>
+	                </tr>               
+	              
+	            </table>
+            </div>
+        </div>
+        
+        <!-- Update Button -->
+        <div class="updateBtn" style="text-align: center;">
+            <button class="btn btn-dark  btn-outline-danger" onclick="editTableDisplay()">Update data</button>
+        </div>     
+		
+		 <!-- Edit table -->
+        <div class="editTable">
+        	<div class="editTableSub">
+        		<div>
+	        		<span>Employee Number:</span>
+	        		<input type="text" name="number" id="number"/>
+        		</div>
+        		
+	        	<div>
+		        	<span>Employee Name:</span> 
+		        	<input type="text" name="name" id="name"/>
+	        	</div>
+	        	
+	        	<div>
+		        	<span>JOB:</span> 
+		        	<input type="text" name="job" id="job"/>
+	        	</div>
+	        	
+	        	<div>
+		        	<span>Address:</span> 
+		        	<input type="text" name="address" id="address"/>
+	        	</div>
+	        	
+	        	<div>
+		        	<span>Phone Number:</span> 
+		        	<input type="text" name="phone" id="phone"/>
+	        	</div>
+	        	
+	        	<div class="updateBtn2" style="text-align: center;">
+			   		 <button class="btn btn-dark  btn-outline-success" onclick="editTableDisplay()">Update</button>
+		     	</div> 
+        	</div>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

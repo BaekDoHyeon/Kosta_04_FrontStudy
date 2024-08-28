@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(() => {
+	/*
+		1. id, name 폼에 공란을 확인... 공백일때 alert 창 알아서 띄우고, 마우스 포커스 맞추고, 페이지 안넘어가도록..
+		2. checkbox... 하나 이상의 취미를 선택하도록... 하나도 선택안하면... 알아서 메세지 띄우기..
+		3. 			   하나 이상의 취미를 선택했다면 $.each() 로 선택한 취미를 하나의 alert 창에 띄운다.
+		4. 서버로 전송하기 직전... confirm 창 사용... "3개의 취미를 선택하셨습니다.전송하시겠습니까?",, 확인/취소 이벤트 처리...
+	*/
+	$('#frm').submit(() => {
+		//1. id, name 폼에 공란을 확인... 공백일때 alert 창 알아서 띄우고, 마우스 포커스 맞추고, 페이지 안넘어가도록..
+		if($('#id').val() == "") {
+			alert("id 값이 입력되지 않았습니다. 값을 입력해주세요.");
+			$('#id').focus();
+			event.preventDefault();
+		} else if ($('#name').val() == "") {
+			alert("name 값이 입력되지 않았습니다. 값을 입력해주세요.");
+			$('#name').focus();
+			event.preventDefault();
+		} else {
+			//2. checkbox... 하나 이상의 취미를 선택하도록... 하나도 선택안하면... 알아서 메세지 띄우기..
+			if ($('input[name="hobby"]:checked').length == 0) {
+	            alert('하나 이상의 취미를 선택하세요.');
+	            event.preventDefault(); // 폼 제출 방지
+	        } else {
+	        	//3. 하나 이상의 취미를 선택했다면 $.each() 로 선택한 취미를 하나의 alert 창에 띄운다.
+	        	// 선택된 체크박스의 값을 저장할 배열
+		        var selectedHobbies = [];
+		        
+		        // 체크된 체크박스들을 반복하여 값(value)들을 배열에 추가
+		        /* $('input[name="hobby"]:checked').each(function() {
+		            selectedHobbies.push($(this).val());
+		        }); */
+		        
+		        $.each($('input[name="hobby"]:checked'), function(index, hobby) {
+		        	selectedHobbies.push($(hobby).val());
+				});
+		        
+		        alert(selectedHobbies);
+	        	
+	        	//4. 서버로 전송하기 직전... confirm 창 사용... "3개의 취미를 선택하셨습니다.전송하시겠습니까?",, 확인/취소 이벤트 처리...
+	    		if(!confirm($('input[name="hobby"]:checked').length + "개의 취미를 선택하셨습니다. 전송하시겠습니까?")) event.preventDefault();
+	        }
+		}
+		
+	}); //submit
+});
+</script>
+</head>
+<body>
+<form action="06_result.jsp" id="frm">
+	ID <input type="text" name="id" id="id"><p>
+	NAME <input type="text" name="name" id="name"><p>
+	
+	<strong>당신의 취미를 고르세요.</strong><p>
+	<input type="checkbox" name="hobby" value="fishing">낚시<br>
+	<input type="checkbox" name="hobby" value="origami">종이접기<br>
+	<input type="checkbox" name="hobby" value="mountain climbing">등산<br>
+	<input type="checkbox" name="hobby" value="listen to music">음악듣기<br>
+	
+	<input type="submit" value="send"/>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

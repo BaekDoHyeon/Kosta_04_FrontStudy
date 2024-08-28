@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Bootstrap CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!-- ChartJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style type="text/css">
+	.chart-container {
+		border: 1px solid #ddd;
+		margin: 0 auto;
+		padding: 10px;
+		border-radius: 4px;
+	}
+	
+	.jumbotron {
+		background-color: lightgray;
+	}
+</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>A항공사 상반기 승객수 차트</h1>
+	</div>
+	<div class="chart-container">
+		<canvas id="bar-chart"></canvas>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var ctx = document.querySelector("#bar-chart");
+	let months = ['1월 승객수', '2월 승객수', '3월 승객수', '4월 승객수', '5월 승객수', '6월 승객수', '7월 승객수'];
+	let data = {
+			label:'2023년',
+			data:[101, 98, 118, 110, 121, 132, 129],
+			backgroundColor: [
+				'rgba(203,206,145,.3)',
+				'rgba(203,206,145,.1)',
+				'rgba(203,206,145,.5)',
+				'rgba(203,206,145,.4)',
+				'rgba(203,206,145,.7)',
+				'rgba(203,206,145,1)',
+				'rgba(203,206,145,.9)'
+			],
+			borderWidth:3,
+			borderColor:'crimson'
+	};
+
+	
+	let config = {
+		type: 'bar',
+		data: {
+			labels: months,
+			datasets: [data]
+		},
+		options: {
+			maintainAspectRadio: false,
+			indexAxis: 'y',
+			scales: { 
+				x: { //labels rotation
+					ticks: {
+						maxRotation: 25,
+						minRotation: 25
+					}
+				}
+			},
+			plugins:{
+                legend: {
+                    display: false
+                },
+            }
+		}
+	};
+	
+	new Chart(ctx, config);
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showName() {
+		//1. 폼에 입력된 값을 받아서 변수(nick)에 할당 후 alert(...) 사용하여 확인
+		let nickForm = document.querySelector("#nick");
+		let nick = nickForm.value;
+		alert(nick);
+		
+		//2. 다시 폼 안에 값을 초기화
+		nickForm.value = "";
+		
+		//3. 마우스 커서가 다시 폼에 지정...
+		nickForm.focus();
+	}
+	
+	function showHobby() {
+		//1. 폼에 입력된 값을 받아서 변수(hobby)에 할당 후 alert(...) 사용하여 확인
+		let hobbyForm = document.frm.hobby;
+		let hobby = hobbyForm.value;
+		alert(hobby);
+		
+		//2. 다시 폼 안에 값을 초기화
+		hobbyForm.value = "";
+		
+		//3. 마우스 커서가 다시 폼에 지정...
+		hobbyForm.focus();
+	}
+</script>
+</head>
+<body>
+<h2>Form Event Handling..</h2>
+<form action="#" name="frm">
+	닉네임 <input type="text" name="nick" id="nick"/>
+	<input type="button" value="닉네임 보기" onclick="showName()"/>
+	<br><br>
+	
+	취미 <input type="text" name="hobby" id="hobby"/>
+	<input type="button" value="취미 보기" onclick="showHobby()"/>
+	<br><br>
+</form>
+</body>
+</html>

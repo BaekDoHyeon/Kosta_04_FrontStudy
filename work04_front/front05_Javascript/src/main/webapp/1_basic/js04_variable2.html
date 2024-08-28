@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	const name = "Peter";
+	const myName = "James"; //var 안붙임 -> 자동으로 전역변수가 된다.
+	
+	console.log(name);
+	console.log(myName);
+	
+	showInfo();
+	function showInfo() {
+		let age = 33; //지역 변수
+		let myAge = 22; //지역 변수
+		console.log("name: " + name + ", age: " + age);
+		console.log("myName: " + myName + ", myAge: " + myAge);
+	} 
+	
+	//console.log("name: " + name + ", age: " + age); 에러 난다.
+	//console.log("myName: " + myName + ", myAge: " + myAge);	//에러 난다.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+

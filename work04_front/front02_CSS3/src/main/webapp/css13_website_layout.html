@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+	* {
+		box-sizing: border-box;
+	}
+	
+	body {
+		position: relative;
+	}
+
+	.header {
+		text-align: center;
+		margin : 70px;
+	}
+	
+	.topnav {
+		background: #333;
+		overflow: hidden;
+		padding: 10px;
+	}
+	
+	.topnav>a {
+		float: left;
+		color: white;
+		padding: 15px;
+		font-size: 22px;
+		text-decoration: none;
+	}
+	
+	.topnav>a:HOVER {
+		background: #111;
+	}
+	
+	.column {
+		width: 33%;
+		height: 500px;
+		float: left;
+		padding: 15px;
+	}
+	
+	.footer {
+		background: gray;
+		width: 33%;
+		/* top: 70%;
+		left: 33%; */
+		transform: translate(100%, 250%);
+		text-align: center;
+		padding: 30px;
+		position: absolute;		
+	}
+	
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+</div>   
+
+<div class="footer">
+  	<p><h2>Footer</h2></p>
+</div>
+</body>
+</html>
+
+
