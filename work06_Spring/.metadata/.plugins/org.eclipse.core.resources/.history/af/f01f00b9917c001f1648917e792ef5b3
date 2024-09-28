@@ -1,0 +1,14 @@
+package com.service.mybatis.unit;
+
+import java.io.IOException;
+
+//SqlSessionFactory까지만 받아오는 기능을 여기에 담는다..
+public class FactoryService {
+	static {
+		try {
+			
+		} catch(IOException e) {
+			System.out.println(e);
+		}
+	}
+}

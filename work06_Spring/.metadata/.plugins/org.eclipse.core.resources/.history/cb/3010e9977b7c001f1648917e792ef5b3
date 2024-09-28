@@ -1,0 +1,19 @@
+package com.service.mybatis.unit;
+
+import com.service.mybatis.vo.MySawon;
+
+public class MySawonUnitTest1 {
+	
+	public static void main(String[] args) {
+		//사원 추가하는 로직을 호출...
+		//1.폼으로부터 사원정보를 받아와야 하는데... 받았다 치고...
+		MySawon pvo = new MySawon();
+		pvo.setId("kosta");
+		pvo.setPwd("1234");
+		pvo.setName("홍종각");
+		pvo.setAge(27);
+		
+		//2. MyBatis 라이브러리 사용해서 작업을 진행...
+	}
+	
+}

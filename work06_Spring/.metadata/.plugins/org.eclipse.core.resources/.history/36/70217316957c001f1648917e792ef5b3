@@ -1,0 +1,39 @@
+package spring.service.test;
+
+import java.io.IOException;
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.service.mybatis.unit.FactoryService;
+
+import spring.service.domain.Member;
+
+public class MyBatisMemberTestApp {
+
+	public static void main(String[] args) throws IOException {
+				Member pvo = new Member();
+				pvo.setId("BAEK");
+				pvo.setPassword("BAEK1234");
+				pvo.setName("BAEKDOHYEON");
+				pvo.setAddress("Incheon");
+	
+				SqlSessionFactory factory = FactoryService.getFactory();
+				SqlSession session = factory.openSession();
+				
+				System.out.println("SqlSession...Creating...");
+				
+				session.insert("MemberMapper.registerMember", pvo);
+				
+				System.out.println(pvo.getName() + " 님 회원 등록 성공^^");
+				
+				session.selectList("MemberMapper.findAllMember", pvo);
+				
+				session.commit();
+				session.close();
+	}
+
+}

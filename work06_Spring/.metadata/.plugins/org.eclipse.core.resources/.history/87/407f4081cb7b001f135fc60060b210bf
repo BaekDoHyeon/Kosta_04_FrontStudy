@@ -1,0 +1,19 @@
+package spring.service.dao.impl;
+
+import spring.service.dao.MemberDAO;
+
+public class MemberDAOImpl implements MemberDAO {
+
+	@Override
+	public void register(String id, String pass) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

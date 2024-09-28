@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+												 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 사용자정의 빈 :: id="user01" :: setter 값 주입 :: 단순파라미터 값 주입 :: id="01유저" age="01"-->
+	<bean id="user01" class="spring.service.domain.User">
+		<property name="userId" value="01유저"/>
+		<property name="age" value="01"/>
+	</bean>
+						 
+</beans>

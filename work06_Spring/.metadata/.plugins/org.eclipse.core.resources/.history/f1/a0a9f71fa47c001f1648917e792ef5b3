@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- SQL definition -->
+<mapper namespace="UserMapper02">
+	<select id="getUser01" parameterType="string" resultType="user">
+		SELECT 
+		user_id as userId, user_name as userName, password, age, grade, reg_date as regDate
+		FROM users
+		WHERE user_id LIKE #{VALUE}
+	</select>
+	
+	<select id="getUser01" parameterType="user" resultType="user">
+		SELECT 
+		user_id as userId, user_name as userName, password, age, grade, reg_date as regDate
+		FROM users
+		WHERE user_id LIKE #{userId}
+	</select>
+</mapper>

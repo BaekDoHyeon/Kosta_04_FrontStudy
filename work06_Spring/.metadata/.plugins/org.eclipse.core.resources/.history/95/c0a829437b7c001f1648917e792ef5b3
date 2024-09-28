@@ -1,0 +1,6 @@
+package com.service.mybatis.unit;
+
+public class MySawonUnitTest1 {
+	//사원 추가하는 로직을 호출...
+	
+}

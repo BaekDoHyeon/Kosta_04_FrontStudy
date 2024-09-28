@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+														http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- A, B, C, Player02 4개의 빈을 정의 -->
+	<bean id="diceA" class="spring.service.dice.impl.DiceAImpl" />;
+	<bean id="diceB" class="spring.service.dice.impl.DiceBImpl" />;
+	<bean id="diceC" class="spring.service.dice.impl.DiceCImpl" />;
+	     
+	<bean id="player01" class="spring.service.dice.play.Player02">
+		<property name="dice" ref="diceA"></property>
+	</bean>
+	
+	<bean id="player02" class="spring.service.dice.play.Player02">
+		<property name="dice" ref="diceB"></property>
+	</bean>
+	
+	<bean id="player03" class="spring.service.dice.play.Player02">
+		<property name="dice" ref="diceC"></property>
+	</bean>
+	
+	<bean id="player04" class="spring.service.dice.play.Player02">
+		<property name="dice" ref="diceA"></property>
+	</bean>
+</beans>

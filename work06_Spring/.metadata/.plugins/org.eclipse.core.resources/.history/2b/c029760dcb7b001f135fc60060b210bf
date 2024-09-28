@@ -1,0 +1,5 @@
+package spring.service.dao;
+
+public interface MemberDAO {
+
+}
