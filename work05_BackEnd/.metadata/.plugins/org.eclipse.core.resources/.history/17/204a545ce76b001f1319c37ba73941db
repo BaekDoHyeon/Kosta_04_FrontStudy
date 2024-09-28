@@ -1,0 +1,37 @@
+package web.servlet.controller;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import web.servlet.model.Item;
+import web.servlet.model.ItemDao;
+
+/*
+ * 하나의 Fruit 정보 받아오기
+ * 조회수 증가하기
+ */
+public class ItemViewController implements Controller {
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		int itemnum = Integer.parseInt(request.getParameter("itemnumber"));
+		System.out.println("ItemViewController....execute.."+itemnum);
+			
+		Item item=ItemDao.getInstance().getItem(itemnum);
+		System.out.println("getItem()? "+item);		
+				
+		request.setAttribute("item", item);
+		return new ModelAndView("itemView.jsp");
+	}
+
+}
+
+
+
+
+
+
+
+
+

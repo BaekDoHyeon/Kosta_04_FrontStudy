@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Fri Sep 06 12:22:48 KST 2024
+org.eclipse.jst.jee.server\:web22_FactoryPattern_CafeMember=C\:\\KOSTA_BDH\\apache-tomcat-9.0.93\\webapps\\web22_FactoryPattern_CafeMember
+org.eclipse.jst.jee.server\:workshop10=C\:\\KOSTA_BDH\\apache-tomcat-9.0.93\\webapps\\workshop10
+org.eclipse.jst.jee.server\:workshop11=C\:\\KOSTA_BDH\\apache-tomcat-9.0.93\\webapps\\workshop11
+org.eclipse.jst.jee.server\:workshop11_2=C\:\\KOSTA_BDH\\apache-tomcat-9.0.93\\webapps\\workshop11_2

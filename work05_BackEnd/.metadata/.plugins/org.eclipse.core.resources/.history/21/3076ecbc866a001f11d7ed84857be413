@@ -1,0 +1,17 @@
+package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class RegisterController implements Controller {
+
+	@Override
+	public String handle(HttpServletRequest request, HttpServletResponse response) {
+		/*
+		 * 폼값 받아서...
+		 * DAO 비지니스 로직 리턴받고...
+		 */
+		return null;
+	}
+	
+}

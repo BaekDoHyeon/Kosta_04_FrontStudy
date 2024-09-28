@@ -1,0 +1,16 @@
+package web.servlet.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import web.servlet.model.ItemDao;
+
+public class AllFruitController implements Controller {
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ArrayList<Item> list = ItemDao.getInstance().getAllItem();
+		
+		return null;
+	}	
+}

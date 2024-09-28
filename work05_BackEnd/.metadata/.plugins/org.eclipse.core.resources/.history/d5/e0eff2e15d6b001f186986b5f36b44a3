@@ -1,0 +1,12 @@
+package web.servlet.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DetailFruitController implements Controller {
+	
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		int itemNum = Integer.parseInt(request.getParameter("itemNum"));
+	}
+}

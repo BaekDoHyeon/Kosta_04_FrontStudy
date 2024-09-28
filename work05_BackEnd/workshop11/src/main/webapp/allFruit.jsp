@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+	.container {
+		witdh: 100%;
+		height: 300px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.fruitContainer {
+		width: 12%;
+		margin: 0 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.fruitContainer>* {
+		width: 90%;
+		height: 23%;
+		margin: 5px;
+	}
+	
+	.fruitImg {
+		height: 50%;
+		border: 2px solid blue;
+		border-radius: 10px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center; 
+	}
+</style>
+<script type="text/javascript">
+	$(() => {
+		$(".fruitImg").on('click', function() {
+			let itemNum = $(this).data("item-number");
+			location.href="detailFruit.do?itemNum="+itemNum;
+		}); //on
+		
+		$(".fruitImg").hover(function() {
+			$(this).css("border-color", "red");
+			$(this).css("cursor", "pointer");
+		}, function() {
+			$(this).css("border-color", "blue");
+		});
+		
+	}); //ready
+</script>
+</head>
+<body>
+<h2 align="center" style="color: blue">Fruit Total List 1.</h2>
+<div class="container">
+	<c:forEach items="${list}" var="item">
+		<div class="fruitContainer">
+			<div class="fruitImg" data-item-number="${item.itemNumber}" style="background-image: url(${item.url})"></div>
+			<div class="fruitName">상품명: ${item.name}</div>
+			<div class="fruitPrice">가격: ${item.price}</div>
+		</div>
+	</c:forEach>
+</div>
+</body>
+</html>

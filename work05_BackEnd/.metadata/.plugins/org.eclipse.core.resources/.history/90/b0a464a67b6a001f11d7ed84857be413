@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion({
+		heightStyle: 'content' //컨텐트에 맞게 어코디언의 높이를 조절하는 옵션
+    });
+    
+    //1. h3태그를 클릭하면...
+    $('#accordion h3').click(function() {
+		//2. 
+		let text = $(this).text();
+		//alert(text);
+		
+		//3. 비동기 로직의 시작..
+		if(text == "Full Stack Subject") { //2번째 h3 태그를 클릭하면...
+			$.ajax({
+				type: 'post',
+				url: 'front.do?command=subject',
+				
+				success:function(result) {
+					$('#subject').html(result);
+				}
+			}); //ajax
+		} else if(text == "Association Global IT Company") {
+			$.ajax({
+				type: 'post',
+				url: 'front.do?command=company',
+				
+				success:function(result) {
+					$('#company').html(result);
+				}
+			}); //ajax
+		}
+    }); //h3 click
+    
+    //4. 버튼 클릭하면...
+    $('#creation').on('click', () => {
+		let footer = '<h3>How to on the way Kosta</h3>'
+    	
+    	
+    }); //on
+  }); //ready
+  </script>
+</head>
+<body>
+ 
+<div id="accordion">
+  <h3>Kosta Education Introduction</h3>
+  <div>
+  	KOSTA Education Introduction 테스트 입니다.
+  	
+  	Full Stack 개발자 양성을 위한 교육기관입니다.
+  </div>
+  
+  <h3>Full Stack Subject</h3>
+  <div id="subject">
+  </div>
+  
+  <h3>Association Global IT Company</h3>
+  <div id="company">
+  </div>
+</div>
+
+<hr>
+
+<input type="button" value="Creation Accordion Section" id="creation">
+</body></html>
+
+
+
+
+
+
+
+

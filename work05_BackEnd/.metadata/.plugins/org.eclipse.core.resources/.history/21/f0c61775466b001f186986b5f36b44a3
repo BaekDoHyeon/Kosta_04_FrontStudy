@@ -1,0 +1,48 @@
+package web.servlet.http;
+
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import web.servlet.model.Book;
+import web.servlet.model.BookDAOImpl;
+
+public class RegisterBookController implements Controller {
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+String path = "";
+		
+		//폼값 받아오기~
+		String[] bookNo = request.getParameterValues("bookNo");
+		String isbn = String.join("-", bookNo);
+		String title = request.getParameter("bookTitle");
+		String category = request.getParameter("bookCategory");
+		String country = request.getParameter("bookCountry");
+		String date = request.getParameter("bookDate");
+		String publisher = request.getParameter("bookPublisher");
+		String author = request.getParameter("bookAuthor");
+		int price = Integer.parseInt(request.getParameter("bookPrice"));
+		String currency = request.getParameter("bookPrice2");
+		String description = request.getParameter("bookSummary");
+		
+		Book book = new Book(isbn, title, category, country, date, publisher, author, price, currency, description);
+		
+		//DAO 호출
+		try {
+			/* HttpSession session = request.getSession(); */
+			BookDAOImpl.getInstance().registerBook(book);
+			request.setAttribute("book", book);
+			request.setAttribute("msg", "책 정보가 정상적으로 저장되었습니다.");
+			path = "book/bookSuccess.jsp";
+		} catch (SQLException e) {
+			request.setAttribute("msg", "책 등록중 오류발생... 정보저장 실패!!");
+			path = "error/error.jsp";
+			e.printStackTrace();
+		}
+		
+		return path;
+	}
+	
+}

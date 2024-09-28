@@ -1,0 +1,7 @@
+package web.servlet.controller;
+
+//Component를 생성하는 일종의 공장
+//서블릿이 전해주는 command 값에 따라서 Component
+public class HandlerMapping {
+
+}

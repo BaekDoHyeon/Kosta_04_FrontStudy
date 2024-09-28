@@ -1,0 +1,39 @@
+package web.servlet.ajax;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/front.do")
+public class JQueryServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public JQueryServlet() {
+        
+    }
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String command = request.getParameter("command");
+		if(command.equals("subject")) {
+			subject(request, response);	
+		} else if(command.equals("company")) {
+			company(request, response);
+		}
+	}
+	
+	private void subject(HttpServletRequest request, HttpServletResponse response) {
+		//DAO 리턴받고... 비지니스 로직 호출... 데이터 응답
+		String result = "Big Data  |   Python   |   JAVA OOP   |   JDBC & Modeling   |   Spring MVC";
+		PrintWriter out = response.getWriter();
+	}
+	
+	private void company(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+}

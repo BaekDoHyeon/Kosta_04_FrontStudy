@@ -1,0 +1,7 @@
+package web.servlet.controller;
+
+//결과페이지의 이름과 이동방법을 저장하는 클래스
+public class ModelAndView {
+	private String path; //결과페이지 정보
+	private boolean isRedirect;
+}

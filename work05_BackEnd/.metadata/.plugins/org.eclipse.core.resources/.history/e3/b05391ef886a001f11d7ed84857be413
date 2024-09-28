@@ -1,0 +1,14 @@
+package controller;
+
+import java.util.Scanner;
+
+public class FrontServlet {
+
+	public static void main(String[] args) {
+		//폼으로 받은 값으로 생각한다...
+		Scanner sc = new Scanner(System.in);
+		System.out.println(">>> Command 값 입력");
+
+	}
+
+}

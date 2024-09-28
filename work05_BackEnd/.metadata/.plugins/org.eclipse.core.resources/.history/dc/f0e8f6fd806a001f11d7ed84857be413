@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+<style type="text/css">
+	#clothing {
+		width: 600px;
+	}
+	
+	#cart {
+		width: 400px;s
+	}
+	
+</style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    //1. 아코디언
+    $( "#catalogue" ).accordion({
+		heightStyle: 'content' //컨텐트에 맞게 어코디언의 높이를 조절하는 옵션
+    });
+    
+    //2. Draggable
+    $("#catalogue li").draggable({
+		helper: 'clone',
+		appendTo: '#cart'
+    });
+    
+  });
+  </script>
+</head>
+<body>
+<div id="clothing">
+	<h1 class="ui-widget-header">Shop Catalogue</h1>
+	
+	<!-- 드래그 하는 대상들 -->
+	<div id="catalogue">
+		<h2><a href="#">상의류</a></h2>
+		<div>
+			<ul>
+				<li>블라우스</li>
+				<li>셔츠정장</li>
+				<li>니트티</li>
+				<li>가디건</li>
+				<li>버버리</li>
+			</ul>
+		</div>
+		
+		<h2><a href="#">하의류</a></h2>
+		<div>
+			<ul>
+				<li>스커트</li>
+				<li>바지 정장</li>
+				<li>숏팬츠</li>
+				<li>버건팬츠</li>
+			</ul>
+		</div>	
+		
+		<h2><a href="#">액세서리</a></h2>
+		<div>
+			<ul>
+				<li>반지갑</li>
+				<li>장지갑</li>
+				<li>손목시계</li>
+				<li>목걸이</li>
+				<li>커플링</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--  Droppable 하는 영역을 추가... 일종의 Cart 개념 -->
+<div id="cart">
+<h1 class="ui-widget-header">Clothing Cart</h1>
+<div id="draggable" class="ui-widget-content">
+  <ol>
+  	<li>Drop here!!</li>
+  </ol>
+</div>
+</div>
+</body>
+</html>
