@@ -14,9 +14,11 @@ import com.service.mybatis.vo.MySawon;
 public class MySawonUnitTest2 {
 	
 	public static void main(String[] args) throws IOException {
-		SqlSessionFactory factory = FactoryService.getFactory();
+//		SqlSessionFactory factory = FactoryService.getFactory();
+//		
+//		SqlSession session = factory.openSession();
 		
-		SqlSession session = factory.openSession();
+		SqlSession session = FactoryService.getFactory().openSession();
 		
 		System.out.println("SqlSession...Creating...");
 		
