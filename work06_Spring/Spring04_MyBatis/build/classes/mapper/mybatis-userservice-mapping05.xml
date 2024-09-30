@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<!-- SQL definition -->
-<mapper namespace="UserMapper03">
+<!-- 여기까지 하면 MyBatis로 CRUD 다 한거임 -->
+<mapper namespace="UserMapper05">
 	<insert id="addUser" parameterType="user">
 		INSERT
 		INTO users(user_id, user_name, password, age, grade, reg_date)
@@ -17,8 +17,8 @@
 	</update>
 	
 	<delete id="removeUser" parameterType="string">
-		DELETE 
-		FROM users
+		DELETE
+		FROM users 
 		WHERE user_id = #{VALUE}
 	</delete>
 </mapper>

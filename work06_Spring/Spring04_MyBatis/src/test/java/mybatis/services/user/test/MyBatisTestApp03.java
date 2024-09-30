@@ -73,7 +73,7 @@ public class MyBatisTestApp03 {
 		//5.User03.removeUser Test
 		int deleteResult = session.delete("UserMapper03.removeUser", user.getUserId());
 		session.commit(); //이 부분 반드시 해줘야 한다.
-		System.out.println(":: 5. removeUser(DELETE) result ? " + deleteResult);
+		System.out.println(":: 5. removeUser(DELETE) result ? "+deleteResult);
 		System.out.println("\n");
 		
 		

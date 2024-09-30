@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+MySQL의 핵심(!)이 되는 설정문서
+:
+DB Access 하는 ,,,
+ -->
+
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 	
 <configuration>
 
+<!-- 1. DB 서버 정보를 가지고 있는 상수값 -->
 <properties resource="config/dbconn.properties"/>
 
+<!-- NULL 값을 허용하는 옵션 지정 : Oracle인 경우 반드시 지정해야 한다. -->
+<settings>
+	<setting name="jdbcTypeForNull" value="NULL" />
+	<setting name="mapUnderscoreToCamelCase" value="true" />
+</settings>
+
+<!-- 2. 정보를 저장하고 있는 vo 클래스 -->
 <typeAliases>
 	<typeAlias type="mybatis.services.domain.User" alias="user"/>
 </typeAliases>	
 
-<environments default="aa">
+<!-- 3. JDBC 환경구축 :: DriverManager (UNPOOLED) :: MyBatis Framework 단위테스트용 -->
+<!-- <environments default="aa">
 	<environment id="aa">
 		<transactionManager type="JDBC"/>
-		<dataSource type="UNPOOLED"> <!-- DriverManager 방식 -->
+		<dataSource type="UNPOOLED"> DriverManager 방식
 			<property name="driver" value="${jdbc.mysql.driver}"/>
 			<property name="url" value="${jdbc.mysql.url}"/>
 			<property name="username" value="${jdbc.mysql.username}"/>
 			<property name="password" value="${jdbc.mysql.password}"/>	
 		</dataSource>
 	</environment>
-</environments>
+</environments> -->
 
+<!-- 4. sql 구문의 모듈화 -->
 <mappers>
 	<mapper resource="mapper/mybatis-userservice-mapping.xml" />
 	<mapper resource="mapper/mybatis-userservice-mapping01.xml" />
 	<mapper resource="mapper/mybatis-userservice-mapping02.xml" />
 	<mapper resource="mapper/mybatis-userservice-mapping03.xml" />
+	<mapper resource="mapper/mybatis-userservice-mapping05.xml" />
+	<mapper resource="mapper/mybatis-userservice-mapping07.xml" />
+	<mapper resource="mapper/mybatis-userservice-mapping08.xml" />
+	<mapper resource="mapper/mybatis-userservice-mapping10.xml" />
 </mappers>
 	
 </configuration>
