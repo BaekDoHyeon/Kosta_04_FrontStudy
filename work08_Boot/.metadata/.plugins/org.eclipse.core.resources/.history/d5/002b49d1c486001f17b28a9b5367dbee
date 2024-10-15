@@ -1,0 +1,11 @@
+package com.web.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PostController {
+	
+	//데이터 전달이 목적
+	@PostMapping("/members")
+	
+}

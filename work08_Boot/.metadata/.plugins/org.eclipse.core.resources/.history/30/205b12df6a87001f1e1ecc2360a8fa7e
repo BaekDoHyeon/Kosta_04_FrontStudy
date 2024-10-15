@@ -1,0 +1,29 @@
+package com.web.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.web.spring.repository.CustomRepository;
+
+//CustomRepository를 주입...Spring Data JPA가 생성하는 빈을 여기서 가져다 쓴다...
+@SpringBootApplication
+public class Boot05JpaRepositoryApplication implements CommandLineRunner {
+
+	//주입된 해당 빈을 사용해서 CRUD 작업을 다 할 수 있다.
+	//트랜잭션 단위로...
+	@Autowired
+	private CustomRepository customRepository;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Boot05JpaRepositoryApplication.class, args);
+	}
+
+}

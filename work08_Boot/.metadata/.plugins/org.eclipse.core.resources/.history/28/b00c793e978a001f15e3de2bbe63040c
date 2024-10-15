@@ -1,0 +1,27 @@
+package com.web.spring.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@EnableWebSecurity
+@Configuration
+public class SecurityConfig {
+	
+	//인증관련 설정은...SecurityFilterChain
+	//SecurityFilterChain을 빈으로 지정...
+	// members/...인증여부
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		//여기다가 인증관련된 인가정책을 등록
+		
+		return http.build();
+	}
+}
+
+
+
+
+

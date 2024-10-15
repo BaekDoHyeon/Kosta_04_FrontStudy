@@ -1,0 +1,17 @@
+package com.web.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import com.web.spring.repository.BoardRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BoardService {
+	final BoardRepository boardRepository;
+	
+	//addBoard()
+	//findBoard(Long id)
+	//getBoard(String member)
+}

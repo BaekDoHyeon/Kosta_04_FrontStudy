@@ -1,0 +1,42 @@
+package com.web.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.web.spring.repository.BoardRepository;
+import com.web.spring.repository.CustomRepository;
+import com.web.spring.repository.RoleRepository;
+
+@SpringBootApplication
+public class Boot07JpqlApplication implements CommandLineRunner {
+
+	@Autowired 
+	RoleRepository roleRepository;
+	
+	@Autowired
+	CustomRepository customRepository;
+	
+	@Autowired
+	BoardRepository boardRepository;
+	
+	@Transactional
+	@Override
+	public void run(String... args) throws Exception {
+		//1. 모든 게시글 검색... findAll()
+		
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(Boot07JpqlApplication.class, args);
+	}
+
+}
+
+
+
+
+
+

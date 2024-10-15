@@ -1,0 +1,5 @@
+spring.application.name=boot09_Security
+
+server.port=9000
+
+# spring security id, password InMemory

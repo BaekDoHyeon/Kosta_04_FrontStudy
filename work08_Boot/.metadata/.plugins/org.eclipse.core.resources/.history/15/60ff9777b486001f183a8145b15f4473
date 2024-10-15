@@ -1,0 +1,3 @@
+spring.application.name=boot02_Controller
+
+server.port=9000

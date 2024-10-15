@@ -1,0 +1,11 @@
+package com.web.spring.controller;
+
+
+/*
+ *  SSR방식의 컨트롤러
+ *  결과페이지를 JSP 사용하고 
+ *  결과페이지를 서버 사이드에서 생성해서 클라이언트 사이드로 리턴
+ */
+public class IndexController {
+	
+}

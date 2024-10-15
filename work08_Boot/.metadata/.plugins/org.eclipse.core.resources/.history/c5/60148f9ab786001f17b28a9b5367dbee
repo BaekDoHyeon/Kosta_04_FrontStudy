@@ -1,0 +1,6 @@
+package com.web.spring.dto;
+
+public class Member {
+	
+	private String id;
+}

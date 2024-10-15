@@ -1,0 +1,7 @@
+package com.web.spring.entity;
+
+public class Board {
+	private Long id //글 번호
+	private String title;
+	private String content
+}

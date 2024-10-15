@@ -1,0 +1,57 @@
+package com.web.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.web.spring.entity.User;
+import com.web.spring.repository.UserRepository;
+
+@SpringBootApplication
+public class Workshop02Application implements CommandLineRunner {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		/*
+		 * 유저 등록
+		 * User user = new User(); user.setUserId("letgogogo"); user.setName("황희찬");
+		 * user.setPassword("hwang1234"); userRespository.save(user);
+		 */
+		
+		/*
+		 * 유저 id로 검색 
+		 * User findIdUser = userRepository.findById("A1234").get();
+		 * System.out.println(findIdUser);
+		 */
+		
+		/*
+		 * 전체 유저 검색 
+		 * userRepository.findAll().forEach(u -> System.out.println(u));
+		 */
+		
+		/*
+		 * 유저 삭제 -> 쿼리가 4번 돌아간다. (select -> insert -> select -> delete)
+		 * User addUser = new User("s12354", "설영우", "pwd1234");
+		 * userRepository.save(addUser); 
+		 * userRepository.delete(addUser);
+		 */
+		
+		/*
+		 * 유저 수정 
+		 * User updateUser = userRepository.findById("letgogogo").get();
+		 * System.out.println("수정 전 >>> " + updateUser);
+		 * updateUser.setPassword("hwang9999"); 
+		 * System.out.println("수정 후 >>> " + updateUser);
+		 */
+		
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(Workshop02Application.class, args);
+	}
+
+}

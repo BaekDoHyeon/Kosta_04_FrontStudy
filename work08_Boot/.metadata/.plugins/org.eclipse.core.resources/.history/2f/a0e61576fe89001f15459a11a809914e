@@ -1,0 +1,57 @@
+package com.web.spring.controller;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.web.spring.dto.BoardRes;
+import com.web.spring.service.BoardService;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+public class BoardController {
+	private final BoardService boardService;
+	
+	/**
+	* 전체 게시물 조회
+	* */
+	public List<BoardRes> findAll(){
+		return null;
+	}
+	
+	/**
+	 * 글번호에 해당하는 게시물 조회
+	 * */	
+	public ResponseEntity<?> findById(){
+		return null;
+	}
+	
+    /**
+	 * 게시물 등록
+	 * */
+	public ResponseEntity<?> save(){
+		return null;
+	}
+	
+	/**
+	 * 글번호에 해당하는 게시물 수정
+	 */
+	public ResponseEntity<?> update(){
+		return null;		
+	
+	}
+	
+	/**
+	 * 글번호에 해당하는 게시물 삭제
+	 * */
+	public ResponseEntity<?> delete(){		
+		return null;
+	}
+}
+
+
+
+

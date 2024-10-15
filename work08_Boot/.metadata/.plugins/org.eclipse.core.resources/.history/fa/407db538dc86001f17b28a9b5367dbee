@@ -1,0 +1,14 @@
+package com.web.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+	
+	//1. No가 1234인 상품을 검색하는 요청을 작성 – 파라미터로 넘어온 값을 받는다.
+	@PostMapping("/product")
+	
+	
+	//2. No가 1234인 상품을 검색하는 요청을 작성 – 요청시 주소창에 바로 입력된다.
+	
+}

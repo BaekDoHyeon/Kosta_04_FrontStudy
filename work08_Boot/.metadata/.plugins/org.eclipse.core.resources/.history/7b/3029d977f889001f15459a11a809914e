@@ -1,0 +1,32 @@
+package com.web.spring.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.web.spring.dto.BoardReq;
+import com.web.spring.entity.Board;
+import com.web.spring.repository.BoardRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BoardService {
+	final BoardRepository boardRepository;
+	
+	@Transactional
+	public Board addBoard(BoardReq boardReq) {
+		System.out.println("BoardReq ==> " + boardReq);
+		Board board = boardReq.toBoard(boardReq); //DTO --> Entity로 변경
+		System.out.println("toBoard ==> " + board);
+		
+		return boardRepository.save(board);
+	}
+	
+	//findBoard(Long id)
+	//getBoard(String memberId)
+	
+	//findAll...성능상 안좋다....boardList() 사용
+	//updateBoard(Long id, BoardReq board)
+	//deleteBoard(Long id)
+}

@@ -1,0 +1,39 @@
+package com.web.spring;
+
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.web.spring.entity.Member;
+import com.web.spring.repository.MemberRepository;
+
+@SpringBootApplication
+public class Boot08JpaBoardApplication implements CommandLineRunner {
+
+	@Autowired
+	MemberRepository memberRepository;
+	
+	@Transactional
+	@Override
+	public void run(String... args) throws Exception {
+		//1. Builder 패턴으로 Member 생성
+		Member m = Member.builder()
+					.id("kosta")
+					.pwd("1234")
+					.address("종각")
+					.name("홍종각")
+					.regDate(LocalDateTime.now()).build();
+		
+		memberRepository.save(m);
+		
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(Boot08JpaBoardApplication.class, args);
+	}
+
+}

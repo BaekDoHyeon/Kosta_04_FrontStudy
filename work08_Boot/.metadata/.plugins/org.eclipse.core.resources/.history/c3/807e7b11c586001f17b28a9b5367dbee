@@ -1,0 +1,16 @@
+package com.web.spring.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PostController {
+	
+	//데이터 전달이 목적... request객체의 Body에 담겨져서 전달되는 값을 받는다.
+	@PostMapping("/members")
+	public String insertMember(@RequestBody Member pvo) {
+		//service 함수 호출... insert... dao...
+		return "";
+	}
+	
+}

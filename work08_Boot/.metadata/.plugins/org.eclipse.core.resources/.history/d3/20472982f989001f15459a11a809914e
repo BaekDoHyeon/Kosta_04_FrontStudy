@@ -1,0 +1,69 @@
+package com.web.spring.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.web.spring.dto.BoardReq;
+import com.web.spring.entity.Board;
+import com.web.spring.exception.BoardSearchNotException;
+import com.web.spring.repository.BoardRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BoardService {
+	final BoardRepository boardRepository;
+	
+	@Transactional
+	public Board addBoard(BoardReq boardReq) {
+		System.out.println("BoardReq ==> " + boardReq);
+		Board board = boardReq.toBoard(boardReq); //DTO --> Entity로 변경
+		System.out.println("toBoard ==> " + board);
+		
+		return boardRepository.save(board);
+	}
+	
+	//findBoard(Long id)
+	/*
+	 * 하나의 게시글 못찾으면 예외처리...
+	 * 찾으면 Board를 바로 반환
+	 */
+	@Transactional(readOnly = true)
+	public Board findBoard(Long id) throws BoardSearchNotException {
+		return boardRepository.findById(id)
+						.orElseThrow(() -> new BoardSearchNotException("게시글 번호를 확인하세요!", "Not Found Boardserch Not~!!"));
+	}
+	
+	//getBoard(String memberId)
+	/*
+	 * 특정 회원이 작성한 게시글을 못찾으면 예외처리...
+	 * 찾으면 List<Board>를 바로 반환
+	 */
+	public List<Board> getBoard(String memberId) throws BoardSearchNotException {
+		List<Board> list = boardRepository.getBoard(memberId);
+		if (list==null ||list.isEmpty()) new BoardSearchNotException("특정 회원이 작성한 글이 없습니다.","");
+		
+		return list;
+	}
+	
+	//findAll...성능상 안좋다....boardList() 사용
+	//updateBoard(Long id, BoardReq board)
+	//deleteBoard(Long id)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

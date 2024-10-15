@@ -1,0 +1,21 @@
+package com.web.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import com.web.spring.repository.BoardRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BoardService {
+	final BoardRepository boardRepository;
+	
+	//addBoard()
+	//findBoard(Long id)
+	//getBoard(String memberId)
+	
+	//findAll...성능상 안좋다....boardList() 사용
+	//updateBoard(Long id, BoardReq board)
+	//deleteBoard(Long id)
+}

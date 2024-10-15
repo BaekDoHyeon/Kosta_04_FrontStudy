@@ -1,0 +1,44 @@
+package com.web.spring.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/*
+ * 생성자 패턴...
+ * Blog blog = new Blog(o, o, o, o, o);
+ * 
+ * 빌드 패턴...
+ * Blog blog = Blog.builder()
+ *  			.name("kosta")
+ *  			.id("1234")
+ *  			.memo("Good~")
+ *  			.build();
+ */
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@Builder //추가!!
+public class Member {
+	
+	private Long memberNo;
+	private String id;
+	private String pwd;
+	private String name;
+	private String address;
+	private LocalDateTime regDate;
+	
+	@Override
+	public String toString() {
+		return "Member [memberNo=" + memberNo + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", address="
+				+ address + ", regDate=" + regDate + "]";
+	}
+	
+}

@@ -1,0 +1,20 @@
+package com.web.spring.entity;
+
+import java.time.LocalDateTime;
+
+public class Member {
+	
+	private Long memberNo;
+	private String id;
+	private String pwd;
+	private String name;
+	private String address;
+	private LocalDateTime regDate;
+	
+	@Override
+	public String toString() {
+		return "Member [memberNo=" + memberNo + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", address="
+				+ address + ", regDate=" + regDate + "]";
+	}
+	
+}

@@ -1,0 +1,42 @@
+package com.web.spring;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.web.spring.entity.User;
+import com.web.spring.repository.ProductRepository;
+import com.web.spring.repository.UserRepository;
+
+@SpringBootApplication
+public class Workshop03Application implements CommandLineRunner {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired 
+	private ProductRepository productRepository;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		//1) 모든 상품의 개수를 받아오는 쿼리 메소드
+		//System.out.println(productRepository.count());
+		
+		//2)  조회한 상품 중에 2건만 제한해서 받아오는 쿼리 메소드
+		//productRepository.findTop2ByOrderByProNo().forEach(p -> System.out.println(p));
+		
+		//모든 User 검색
+		//userRepository.findAll().forEach(u -> System.out.println(u));
+		
+		//모든 User 정보와 함께 User들이 구입한 Product  정보도 검색
+		userRepository.findById(1L).get().getProducts().forEach(p -> System.out.println(p));
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(Workshop03Application.class, args);
+	}
+
+}
