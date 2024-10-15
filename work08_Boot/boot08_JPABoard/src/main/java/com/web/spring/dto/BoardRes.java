@@ -27,8 +27,7 @@ public class BoardRes {
          title=board.getTitle();
          content=board.getContent();
          regDate=board.getRegDate().toString();
-         member=new MemberRes(board.getMember().getMemberNo(),
-                 board.getMember().getId() , board.getMember().getName());
+         member= new MemberRes(board.getMember().getMemberNo(), board.getMember().getId() , board.getMember().getName());
 
     }
 

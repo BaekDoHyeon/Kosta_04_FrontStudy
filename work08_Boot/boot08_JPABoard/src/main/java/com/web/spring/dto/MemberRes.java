@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberRes {
-    private Long  memberNo;
-    private String  id;
-    private String  name;
+    private Long memberNo;
+    private String id;
+    private String name;
 
 }
